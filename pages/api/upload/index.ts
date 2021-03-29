@@ -1,21 +1,20 @@
 import { ifNotErr } from "errable";
 
-import withParseBody from "../../../lib/withParseBody";
-import { Route } from "../../../lib/Route";
-import { ReqVars, ReturnType } from "./types";
+import withParseBody from "../../../lib/utils/withParseBody";
+import { Route } from "../../../lib/types/Route";
+import { createRespondOrCatch } from "../../../lib/utils/respond";
+import { RequestVars, ReturnType, ErrorType } from "./types";
 import transform from "./transform";
 import validate from "./validate";
 import usecase from "./usecase";
 
-const route: Route<ReqVars, ReturnType> = (req, res) => {
+const route: Route<RequestVars, ReturnType, ErrorType> = (req, res) => {
+  const respondOrCatch = createRespondOrCatch(res);
   return Promise.resolve(req)
     .then(transform)
     .then(ifNotErr(validate))
     .then(ifNotErr(usecase))
-    .then(...responderWithCatch(res));
-  if (req.method !== "post") {
-  }
-  res.send("ok");
+    .then(...respondOrCatch);
 };
 
 export default withParseBody(route);

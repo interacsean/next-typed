@@ -1,12 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { Route } from '../types/Route';
 
-type Controller = (
-  req: NextApiRequest,
-  res: NextApiResponse,
-  next: Function
-) => void;
-
-export default function withParseBody(controller: Controller) {
+export default function withParseBody<T, U, E>(controller: Route<T, U, E>) {
   return (req: NextApiRequest, res: NextApiResponse, next: Function) => {
     let bodyData = null;
     try {

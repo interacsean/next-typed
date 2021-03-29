@@ -1,7 +1,10 @@
-import { ValidateFn } from "../../../lib/ValidateFn";
-import { UsecaseDto } from "./types";
+import { createAppErr } from "../../../lib/types/AppErr";
+import { ValidateFn } from "../../../lib/types/ValidateFn";
 
-const validate: ValidateFn<UsecaseDto> = (req) => {
+import { UnvalidatedDto, ValidatedDto, ErrorType } from "./types";
+
+const validate: ValidateFn<UnvalidatedDto, ValidatedDto, ErrorType> = (dto) => {
+  // return createAppErr("Sample error validating");
   return {};
 };
 

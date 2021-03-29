@@ -1,7 +1,7 @@
-import { UsecaseFn } from "../../../lib/UsecaseFn";
-import { ReturnType, UsecaseDto } from "./types";
+import { UsecaseFn } from "../../../lib/types/UsecaseFn";
+import { ReturnType, ValidatedDto, ErrorType } from "./types";
 
-const usecase: UsecaseFn<UsecaseDto, ReturnType> = (dto) => {
+const usecase: UsecaseFn<ValidatedDto, ReturnType, ErrorType> = (dto) => {
   return {};
 };
 

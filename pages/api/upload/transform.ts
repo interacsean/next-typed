@@ -1,7 +1,7 @@
-import { TransformFn } from "../../../lib/TransformFn";
-import { ReqVars, UsecaseDto } from "./types";
+import { TransformFn } from "../../../lib/types/TransformFn";
+import { RequestVars, UnvalidatedDto } from "./types";
 
-const transform: TransformFn<ReqVars, UsecaseDto> = (req) => {
+const transform: TransformFn<RequestVars, UnvalidatedDto> = (req) => {
   return {};
 };
 
