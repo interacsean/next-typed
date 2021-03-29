@@ -1,0 +1,22 @@
+{
+  "name": "mentor-mentee-match-ui",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "9.1.5",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "errable": "0.3.5"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.17",
+    "@types/react": "^16.9.16",
+    "typescript": "3.7.3"
+  },
+  "keywords": [],
+  "description": ""
+}
